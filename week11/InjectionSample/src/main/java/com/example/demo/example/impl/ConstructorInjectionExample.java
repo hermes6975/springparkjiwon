@@ -1,0 +1,24 @@
+package com.example.demo.example.impl;
+
+import com.example.demo.example.Example;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.service.SomeService;
+
+//@Component
+public class ConstructorInjectionExample implements Example {
+
+    /** 필드 */
+    private final SomeService someService;
+
+    /** 생성자 주입 */
+    @Autowired
+    public ConstructorInjectionExample(SomeService someService) {
+        this.someService = someService;
+    }
+
+    /** 실행 */
+    public void run() {
+        someService.doService();
+    }
+}
